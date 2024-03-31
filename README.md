@@ -1,10 +1,10 @@
 # telescope-crossplane.nvim
 
-This is [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) and
-exposes two pickers that correspond to the following `kubeclt` commands:
+This [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
+extension two pickers that get data from the following `kubeclt` commands:
 
-1. kubectl get crossplane
-2. kubectl get managed
+1. `kubectl get crossplane`
+2. `kubectl get managed`
 
 ## Requirements
 
@@ -40,16 +40,21 @@ There are two commands available:
 
 It might take a while to load the resources, so be patient.
 Once the resources are loaded, you can use the picker to edit the resource YAML
-in a new buffer.
+in a new terminal buffer.
 
-### Bind to Keys:
+The new buffer will auto close once you save and exit the buffer without errors.
+In case of errors, the buffer will stay open, and the error message from
+`kubectl` will be shown.
+
+### Keymaps
+
+The plugin doesn't define any keymaps to avoid conflicts. To add keymaps, you can
+add the following to your `init.vim` or `init.lua`. The following example uses
+`<Leader>tcm` and `<Leader>tcr`, but you can use any keymaps you want.
 
 ```vim
-" Replace <Leader>cf with whatever you prefer
 vim.keymap.set("n", "<Leader>tcm", ":Telescope telescope-crossplane crossplane_managed<CR>")
 vim.keymap.set("n", "<Leader>tcr", ":Telescope telescope-crossplane crossplane_resources<CR>")
-
-nnoremap <Leader>cr <cmd>Telescope telescope-crossplane crossplane_resources
 ```
 
 ### Development
