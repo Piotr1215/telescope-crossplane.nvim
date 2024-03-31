@@ -11,6 +11,6 @@ return require("telescope").register_extension {
     end,
     exports = {
         crossplane_managed = crossplane.show_managed_resources,
-        crossplane = crossplane.show_crossplane_resources
+        crossplane_resources = crossplane.show_crossplane_resources
 },
 }
