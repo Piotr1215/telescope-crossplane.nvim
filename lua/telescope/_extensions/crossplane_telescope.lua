@@ -4,7 +4,7 @@ if not has_telescope then
   error "This plugin requires telescope.nvim (https://github.com/nvim-telescope/telescope.nvim)"
 end
 
-local crossplane = require("crossplane_telescope")
+local crossplane = require("telescope._extensions.crossplane_telescope.init")
 
 return require("telescope").register_extension {
     setup = function(ext_config, config)
