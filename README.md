@@ -1,7 +1,7 @@
 # telescope-crossplane.nvim
 
 This [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
-extension two pickers that get data from the following `kubeclt` commands:
+extension providers two pickers for the following `kubeclt` commands:
 
 1. `kubectl get crossplane`
 2. `kubectl get managed`
